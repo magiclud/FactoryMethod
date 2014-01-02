@@ -19,6 +19,7 @@ public abstract class AbstractReport implements Report {
 
 	private String reportContent;
 
+
 	@Override
 	public String getReportContent() {
 		return reportContent;
