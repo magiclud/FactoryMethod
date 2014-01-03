@@ -33,13 +33,13 @@ public class ReportGenerator {
 		ReportFactory generatedReport = null;
 
 		if (type.equals("JSON")) {
-			generatedReport = new JSONReportFactory();
+			generatedReport = new JSONReportFactory(data);
 		} else if (type.equals("XML")) {
-			generatedReport = new XMLReportFactory();
+			generatedReport = new XMLReportFactory(data);
 		} else if (type.equals("HTML")) {
-			generatedReport = new HTMLReportFactory();
+			generatedReport = new HTMLReportFactory(data);
 		} else if (type.equals("PDF")) {
-			generatedReport = new PDFReportFactory();
+			generatedReport = new PDFReportFactory(data);
 		}
 		if (generatedReport != null) {
 			generatedReport.createReport().generateReport(data);

@@ -1,23 +1,20 @@
 package eu.jpereira.trainings.designpatterns.creational.factorymethod;
 
-public class PDFReportFactory implements ReportFactory, Report {
+public class PDFReportFactory implements ReportFactory {
+
+	ReportData data;
+
+	public PDFReportFactory(ReportData data) {
+		this.data = data;
+		createReport();
+	}
+
 
 	@Override
 	public Report createReport() {
-		return new PDFReport();
+		return new PDFReport(data);
 	}
 
-	@Override
-	public void generateReport(ReportData data) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String getReportContent() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 
 }

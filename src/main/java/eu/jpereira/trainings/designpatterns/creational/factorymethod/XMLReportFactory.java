@@ -1,22 +1,17 @@
 package eu.jpereira.trainings.designpatterns.creational.factorymethod;
 
-public class XMLReportFactory implements ReportFactory, Report {
+public class XMLReportFactory implements ReportFactory {
+
+	ReportData data;
+
+	public XMLReportFactory(ReportData data) {
+		this.data = data;
+		createReport();
+	}
 
 	@Override
 	public Report createReport() {
-		return new XMLReport();
-	}
-
-	@Override
-	public void generateReport(ReportData data) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public String getReportContent() {
-		// TODO Auto-generated method stub
-		return null;
+		return new XMLReport(data);
 	}
 
 }
