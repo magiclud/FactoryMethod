@@ -44,7 +44,8 @@ public class ReportGeneratorTest extends AbstractReportingTest{
 	public void testCreateHTMLReport() {
 		ReportData reportData = createDummyReportData();
 		ReportGenerator generator = new ReportGenerator();
-		Report generatedReport = generator.generateReport(reportData, "HTML");
+		HTMLReportFactory htmlraport = new HTMLReportFactory(reportData);
+		Report generatedReport = generator.generateReport(reportData, htmlraport);
 		assertEquals("HTML Report. Name: "+reportData.getName(), generatedReport.getReportContent());
 	}
 	
