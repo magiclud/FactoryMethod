@@ -29,9 +29,9 @@ public class ReportGenerator {
 	 * @param type the type of report
 	 * @return the generated report, or null of type is unknown
 	 */
-	public Report generateReport(ReportData data, ReportFactory type) {
+	public Report generateReport(ReportData data, ReportFactory report) {
 
-		return type.createReport();
+		return report.createReport();
 	}
 
 }
