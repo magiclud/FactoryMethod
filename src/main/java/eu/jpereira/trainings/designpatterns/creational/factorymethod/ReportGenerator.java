@@ -28,9 +28,9 @@ public class ReportGenerator {
 	 * @param type the type of report
 	 * @return the generated report, or null of type is unknown
 	 */
-	public ReportFactory generateReport(ReportData data, String type) {
+	public Report generateReport(ReportData data, String type) {
 
-		ReportFactory generatedReport = null;
+		Report generatedReport = null;
 
 		if (type.equals("JSON")) {
 			generatedReport = new JSONReportFactory();
@@ -42,7 +42,7 @@ public class ReportGenerator {
 			generatedReport = new PDFReportFactory();
 		}
 		if (generatedReport != null) {
-			generatedReport.createReport();
+			generatedReport.generateReport(data);
 		}
 
 		return generatedReport;

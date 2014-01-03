@@ -16,23 +16,19 @@
 
 package eu.jpereira.trainings.designpatterns.creational.factorymethod;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import eu.jpereira.trainings.designpatterns.creational.factorymethod.Report;
-import eu.jpereira.trainings.designpatterns.creational.factorymethod.ReportData;
-import eu.jpereira.trainings.designpatterns.creational.factorymethod.ReportGenerator;
 public class ReportGeneratorTest extends AbstractReportingTest{
 
-	
+	AbstractReport raport = null;
 	
 	@Test
 	public void testCreateJSONReport() {
 		ReportData reportData = createDummyReportData();
 		ReportGenerator generator = new ReportGenerator();
 		Report generatedReport = generator.generateReport(reportData, "JSON");
-		assertEquals("JSON Report. Name: "+reportData.getName(), generatedReport.getReportContent());
+		assertEquals("JSON Report. Name: " + reportData.getName(), generatedReport.getReportContent());
 	}
 	
 	
