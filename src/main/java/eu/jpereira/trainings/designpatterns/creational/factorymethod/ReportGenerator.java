@@ -30,7 +30,7 @@ public class ReportGenerator {
 	 */
 	public Report generateReport(ReportData data, String type) {
 
-		Report generatedReport = null;
+		ReportFactory generatedReport = null;
 
 		if (type.equals("JSON")) {
 			generatedReport = new JSONReportFactory();
@@ -42,10 +42,10 @@ public class ReportGenerator {
 			generatedReport = new PDFReportFactory();
 		}
 		if (generatedReport != null) {
-			generatedReport.generateReport(data);
+			generatedReport.createReport().generateReport(data);
 		}
 
-		return generatedReport;
+		return generatedReport.createReport();
 	}
 
 }
