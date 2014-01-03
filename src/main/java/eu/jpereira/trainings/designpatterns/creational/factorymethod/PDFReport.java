@@ -17,12 +17,6 @@ package eu.jpereira.trainings.designpatterns.creational.factorymethod;
 
 public class PDFReport extends AbstractReport {
 
-	ReportData data;
-
-	public PDFReport(ReportData data) {
-		this.data = data;
-		generateReport(data);
-	}
 
 	@Override
 	public void generateReport(ReportData data) {

@@ -17,12 +17,6 @@ package eu.jpereira.trainings.designpatterns.creational.factorymethod;
 
 public class JSONReport extends AbstractReport {
 
-	ReportData data;
-
-	public JSONReport(ReportData data) {
-		this.data = data;
-		generateReport(data);
-	}
 
 	@Override
 	public void generateReport(ReportData data) {

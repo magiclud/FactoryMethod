@@ -3,6 +3,7 @@ package eu.jpereira.trainings.designpatterns.creational.factorymethod;
 public class JSONReportFactory implements ReportFactory {
 
 	ReportData data;
+	JSONReport jsonRaport;
 
 	public JSONReportFactory(ReportData data) {
 		this.data = data;
@@ -12,7 +13,9 @@ public class JSONReportFactory implements ReportFactory {
 
 	@Override
 	public Report createReport() {
-		return new JSONReport(data);
+		jsonRaport = new JSONReport();
+		jsonRaport.generateReport(data);
+		return jsonRaport;
 	}
 
 }
